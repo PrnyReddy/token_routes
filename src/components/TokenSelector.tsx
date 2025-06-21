@@ -1,4 +1,12 @@
-// TokenSelector: Autocomplete input for SPL tokens using Jupiter Token API
+/**
+ * TokenSelector component for the Jupiter Router Explorer.
+ * - Provides an autocomplete dropdown for SPL token selection using the Jupiter Token API.
+ * - Supports searching by name, symbol, or address, and displays token icons.
+ * - Allows users to favorite tokens, with favorites persisted in localStorage.
+ * - Handles loading states, image fallbacks, and responsive dropdown UI.
+ * - Designed with glassmorphism styling and accessibility in mind.
+ */
+
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 

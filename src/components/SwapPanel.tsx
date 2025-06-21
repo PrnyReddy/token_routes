@@ -1,3 +1,12 @@
+/**
+ * SwapPanel component for the Jupiter Router Explorer.
+ * - Handles swap simulation and execution between selected tokens.
+ * - Fetches quotes from Jupiter's API and displays output, rate, price impact, slippage, and fees.
+ * - Allows users to set slippage tolerance and input swap amounts.
+ * - Integrates wallet connection and transaction sending on Solana.
+ * - Responsive, glassmorphism-styled, and provides error/success feedback.
+ */
+
 "use client";
 // SwapPanel: Handles swap simulation and execution
 import React, { useState, useEffect } from "react";

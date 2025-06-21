@@ -1,3 +1,12 @@
+/**
+ * RouteAnalytics component for the Jupiter Router Explorer.
+ * - Displays analytics and insights for token swap routes between selected tokens.
+ * - Shows route statistics, price impact, protocol usage, and route complexity.
+ * - Provides a timeframe selector and mock historical data for demonstration.
+ * - Offers smart insights and suggestions based on analytics.
+ * - Responsive, glassmorphism-styled, and designed for Solana DEX routing context.
+ */
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
