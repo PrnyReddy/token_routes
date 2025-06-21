@@ -1,3 +1,12 @@
+/**
+ * Main page component for the Jupiter Router Explorer Next.js app.
+ * - Provides a UI for selecting input/output tokens and visualizing swap routes.
+ * - Integrates wallet connection and theme toggling.
+ * - Features tabbed navigation for route visualization and analytics.
+ * - Uses modular components for token selection, route graph, swap panel, and analytics.
+ * - Responsive layout with glassmorphism styling and Solana wallet support.
+ */
+
 "use client";
 import React, { useState } from "react";
 import TokenSelector from "../components/TokenSelector";

@@ -1,3 +1,11 @@
+/**
+ * ThemeToggle component for the Jupiter Router Explorer.
+ * - Allows users to toggle between dark and light themes.
+ * - Initializes theme from localStorage or system preference.
+ * - Updates the HTML root class and persists the user's choice.
+ * - Provides an accessible button with animated icon feedback.
+ */
+
 "use client";
 
 import React, { useEffect, useState } from 'react';

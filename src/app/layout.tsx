@@ -1,3 +1,11 @@
+/**
+ * Root layout component for the Next.js application.
+ * - Sets up global metadata for SEO and browser configuration.
+ * - Applies the Inter font and global styles.
+ * - Wraps all pages with the AppWalletProvider for wallet context.
+ * - Ensures consistent HTML structure and dark mode support.
+ */
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";

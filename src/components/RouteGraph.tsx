@@ -1,3 +1,12 @@
+/**
+ * RouteGraph component for the Jupiter Router Explorer.
+ * - Visualizes swap routes between selected tokens using a custom graph layout.
+ * - Fetches route data from Jupiter's quote API and displays route plans, hops, and protocol usage.
+ * - Supports multiple route comparison, price impact, and slippage details.
+ * - Responsive, glassmorphism-styled, and designed for Solana DEX routing context.
+ * - Handles token images, loading states, and user-friendly route selection.
+ */
+
 "use client";
 // RouteGraph: Visualizes swap routes using react-flow
 import React, { useEffect, useState, useMemo } from "react";
