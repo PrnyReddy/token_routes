@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Jupiter Route Visualizer
 
 A Solana dApp that visualizes optimal swap routes between any two SPL tokens using Jupiter’s Quote, Swap, Token, and Price APIs. It renders interactive route graphs (via react-flow), supports swap simulation/execution, and educates users on Jupiter’s deep composability.
@@ -145,4 +144,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 Built with ❤️ for the Jupiter Ecosystem during Namaste Jupiverse - Hackathon Edition.
->>>>>>> ea7572a (updates)
