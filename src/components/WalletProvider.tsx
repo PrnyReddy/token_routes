@@ -24,11 +24,7 @@ export default function AppWalletProvider({
       new PhantomWalletAdapter(),
       new SolflareWalletAdapter(),
     ],
-<<<<<<< HEAD
-    [network]
-=======
     []
->>>>>>> ea7572a (updates)
   );
 
   return (

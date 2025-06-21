@@ -1,13 +1,9 @@
 // TokenSelector: Autocomplete input for SPL tokens using Jupiter Token API
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-=======
 import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 
 // Default generic token icon as fallback
 const DEFAULT_TOKEN_ICON = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTIgMjRDMTguNjI3NCAyNCAyNCAyNCAyNCAxN0MyNCAxMCAyNCA1LjM3MjU4IDE3IDVDMTAgNC42Mjc0MSA0IDEwIDQgMTdDNCAxNyA0IDI0IDEyIDI0WiIgZmlsbD0iI0NDRDJFOSIvPjxwYXRoIGQ9Ik0xMiAyNEMxOC42Mjc0IDI0IDE5IDE4LjYyNzQgMTkgMTJDMTkgNS4zNzI1OCAxOC42Mjc0IDAgMTIgMEM1LjM3MjU4IDAgNSA1LjM3MjU4IDUgMTJDNSAxOC42Mjc0IDUuMzcyNTggMjQgMTIgMjRaIiBmaWxsPSIjODg5RkIwIi8+PC9zdmc+";
->>>>>>> ea7572a (updates)
 
 export type TokenInfo = {
   address: string;
@@ -24,53 +20,6 @@ type TokenSelectorProps = {
 
 const TokenSelector: React.FC<TokenSelectorProps> = ({ label, onSelect }) => {
   const [tokens, setTokens] = useState<TokenInfo[]>([]);
-<<<<<<< HEAD
-  const [query, setQuery] = useState("");
-  const [filtered, setFiltered] = useState<TokenInfo[]>([]);
-
-  useEffect(() => {
-    fetch("https://token.jup.ag/all")
-      .then((res) => res.json())
-      .then((data) => setTokens(data));
-  }, []);
-
-  useEffect(() => {
-    setFiltered(
-      tokens.filter(
-        (t) =>
-          t.symbol.toLowerCase().includes(query.toLowerCase()) ||
-          t.address.toLowerCase().includes(query.toLowerCase())
-      )
-    );
-  }, [query, tokens]);
-
-  return (
-    <div className="w-full max-w-md mx-auto my-4">
-      <label className="block mb-1 font-semibold">{label}</label>
-      <input
-        type="text"
-        placeholder="Search token by symbol or mint address"
-        className="input input-bordered w-full mb-2"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <ul className="bg-white dark:bg-gray-800 border rounded max-h-48 overflow-y-auto">
-        {filtered.slice(0, 10).map((token) => (
-          <li
-            key={token.address}
-            className="flex items-center gap-2 p-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
-            onClick={() => {
-              setQuery(token.symbol);
-              onSelect(token);
-            }}
-          >
-            <img src={token.logoURI} alt={token.symbol} className="w-5 h-5 rounded-full" />
-            <span className="font-semibold">{token.symbol}</span>
-            <span className="text-xs text-gray-400">{token.name}</span>
-          </li>
-        ))}
-      </ul>
-=======
   const [favorites, setFavorites] = useState<string[]>([]);
   const [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
@@ -246,7 +195,6 @@ const TokenSelector: React.FC<TokenSelectorProps> = ({ label, onSelect }) => {
           </ul>
         </div>
       )}
->>>>>>> ea7572a (updates)
     </div>
   );
 };

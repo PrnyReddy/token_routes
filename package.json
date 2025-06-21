@@ -24,15 +24,6 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-<<<<<<< HEAD
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.4",
-    "tailwindcss": "^4",
-=======
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -42,7 +33,6 @@
     "pino-pretty": "^13.0.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
->>>>>>> ea7572a (updates)
     "typescript": "^5"
   }
 }

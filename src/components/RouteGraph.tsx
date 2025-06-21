@@ -1,18 +1,10 @@
 "use client";
 // RouteGraph: Visualizes swap routes using react-flow
-<<<<<<< HEAD
-import React, { useEffect, useState } from "react";
-import type { TokenInfo } from "./TokenSelector";
-import ReactFlow, { Background, Controls, Edge, Node } from "reactflow";
-import 'reactflow/dist/style.css';
-
-=======
 import React, { useEffect, useState, useMemo } from "react";
 import Image from "next/image";
 import type { TokenInfo } from "./TokenSelector";
 
 // Create a simplified version that doesn't use ReactFlow for now
->>>>>>> ea7572a (updates)
 type RouteGraphProps = {
   inputToken: TokenInfo | null;
   outputToken: TokenInfo | null;
@@ -34,17 +26,6 @@ type RoutePlan = {
   percent: number;
 };
 
-<<<<<<< HEAD
-const RouteGraph: React.FC<RouteGraphProps> = ({ inputToken, outputToken }) => {
-  const [routePlan, setRoutePlan] = useState<RoutePlan[] | null>(null);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    if (!inputToken || !outputToken) {
-      setRoutePlan(null);
-      return;
-    }
-=======
 type Route = {
   amount: string;
   inAmount: string;
@@ -113,23 +94,15 @@ const RouteGraph: React.FC<RouteGraphProps> = ({ inputToken, outputToken }) => {
       return;
     }
     
->>>>>>> ea7572a (updates)
     setLoading(true);
     const fetchUrl = new URL('https://quote-api.jup.ag/v6/quote');
     fetchUrl.searchParams.append('inputMint', inputToken.address);
     fetchUrl.searchParams.append('outputMint', outputToken.address);
-<<<<<<< HEAD
-    fetchUrl.searchParams.append('amount', '1000000');
-    
-    console.log("Fetching route from:", fetchUrl.toString());
-
-=======
     fetchUrl.searchParams.append('amount', '10000000'); // 10 tokens with 6 decimals
     fetchUrl.searchParams.append('slippageBps', '50'); // 0.5%
     fetchUrl.searchParams.append('onlyDirectRoutes', 'false');
     fetchUrl.searchParams.append('maxRoutes', '3');
     
->>>>>>> ea7572a (updates)
     const headers: HeadersInit = {
       'Content-Type': 'application/json',
     };
@@ -139,18 +112,6 @@ const RouteGraph: React.FC<RouteGraphProps> = ({ inputToken, outputToken }) => {
     }
 
     fetch(fetchUrl.toString(), { headers })
-<<<<<<< HEAD
-      .then((res) => {
-        console.log("Response status:", res.status);
-        return res.json();
-      })
-      .then((data) => {
-        console.log("API Response:", JSON.stringify(data, null, 2));
-        setRoutePlan(data.routePlan || []);
-      })
-      .catch((error) => {
-        console.error("Error fetching route:", error);
-=======
       .then((res) => res.json())
       .then((data) => {
         if (data.routes && data.routes.length > 0) {
@@ -176,88 +137,10 @@ const RouteGraph: React.FC<RouteGraphProps> = ({ inputToken, outputToken }) => {
       .catch((error) => {
         console.error("Error fetching routes:", error);
         setRoutes([]);
->>>>>>> ea7572a (updates)
       })
       .finally(() => setLoading(false));
   }, [inputToken, outputToken]);
 
-<<<<<<< HEAD
-  // Build react-flow nodes and edges from the first route
-  const nodes: Node[] = [];
-  const edges: Edge[] = [];
-  if (routePlan && routePlan.length > 0) {
-    // Add input token node
-    nodes.push({
-      id: "input",
-      data: { label: inputToken?.symbol || "Input" },
-      position: { x: 0, y: 150 },
-      type: "input",
-    });
-    // Add AMM nodes and edges
-    routePlan.forEach((info, i) => {
-      const ammNodeId = `amm-${i}`;
-      nodes.push({
-        id: ammNodeId,
-        data: { label: info.swapInfo.label },
-        position: { x: 200 + i * 200, y: 100 + (i % 2) * 100 },
-      });
-      edges.push({
-        id: `edge-input-${ammNodeId}`,
-        source: i === 0 ? "input" : `amm-${i - 1}`,
-        target: ammNodeId,
-        label: `${info.percent}%`,
-        animated: true,
-      });
-    });
-    // Add output token node
-    nodes.push({
-      id: "output",
-      data: { label: outputToken?.symbol || "Output" },
-      position: { x: 200 + routePlan.length * 200, y: 150 },
-      type: "output",
-    });
-    // Edge from last AMM to output
-    if (routePlan.length > 0) {
-      edges.push({
-        id: `edge-last-output`,
-        source: `amm-${routePlan.length - 1}`,
-        target: "output",
-        label: "Output",
-        animated: true,
-      });
-    } else {
-      // Direct edge if no hops
-      edges.push({
-        id: `edge-input-output`,
-        source: "input",
-        target: "output",
-        label: "Direct",
-        animated: true,
-      });
-    }
-  }
-
-  return (
-    <div className="w-full h-96 border rounded my-4 flex flex-col items-center justify-center">
-      {loading && <span className="text-gray-400">Loading routes...</span>}
-      {!loading && routePlan && routePlan.length > 0 && (
-        <div className="w-full h-full">
-          <ReactFlow nodes={nodes} edges={edges} fitView>
-            <Background />
-            <Controls />
-          </ReactFlow>
-        </div>
-      )}
-      {!loading && routePlan && routePlan.length === 0 && (
-        <span className="text-gray-400">No routes found for selected tokens.</span>
-      )}
-      {!loading && !routePlan && (
-        <span className="text-gray-400">
-          {inputToken && outputToken
-            ? `No route data yet for ${inputToken.symbol} → ${outputToken.symbol}`
-            : "Select tokens to visualize route"}
-        </span>
-=======
   // Get the routes to render
   const routesToRender = useMemo(() => {
     if (routes.length === 0) return [];
@@ -448,7 +331,6 @@ const RouteGraph: React.FC<RouteGraphProps> = ({ inputToken, outputToken }) => {
             </p>
           </div>
         </div>
->>>>>>> ea7572a (updates)
       )}
     </div>
   );
