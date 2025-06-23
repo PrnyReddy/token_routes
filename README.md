@@ -36,7 +36,7 @@ Jupiter Router Explorer is a comprehensive tool that helps traders, developers, 
 
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/jupiter-router-explorer.git
+git clone https://github.com/prnyreddy/jupiter-router-explorer.git
 cd jupiter-router-explorer
 ```
 
