@@ -69,24 +69,4 @@ Jupiter Router Explorer leverages Jupiter's Quote API to fetch and visualize opt
 - **Jupiter API**: For route quotation and swap execution
 - **Solana Web3.js**: For blockchain interaction
 
-## Future Enhancements
-
-- [ ] Historical Price Impact Analysis
-- [ ] Route Optimization Recommendations
-- [ ] MEV Protection Visualization
-- [ ] Market Depth Charts
-- [ ] Real-time Market Activity Indicators
-
-## Contact
-
-For any questions, feedback or collaboration opportunities, please reach out to us at:
-- Twitter: [@YourTwitterHandle](https://twitter.com/yourtwitterhandle)
-- Discord: YourDiscordHandle#1234
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-Built with ❤️ for the Jupiter Ecosystem during Namaste Jupiverse - Hackathon Edition.
+Built with ❤️ for the Jupiter Ecosystem during Namaste Jupiverse - Hackathon.
